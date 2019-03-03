@@ -1,0 +1,38 @@
+:root {
+    --button-main-color: #282c34;
+}
+
+.ingrediente {
+    display: flex;
+    border: 1px solid;
+    margin: 2px;
+    padding: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ingrediente div {
+    flex: 1;
+    text-align: center;
+}
+
+.ingrediente .add-button-container button {
+    background-color: whitesmoke;
+    color: var(--button-main-color);
+    transition: 0.4s;
+    padding: 5px;
+    border-radius: 3px;
+    min-width: 40px;
+    border: 2px solid var(--button-main-color);
+}
+
+.ingrediente .add-button-container button:hover {
+    background-color: var(--button-main-color); 
+    color: white;
+}
+
+.ingrediente .add-button-container button:active {
+    background-color: white; 
+    color: var(--button-main-color);
+    transition: 0ms;
+    border: 2px solid transparent;
+}
