@@ -18,6 +18,19 @@ class App extends Component {
       ingredientesHamburguesa: [...this.state.ingredientesHamburguesa, unIngrediente]})
   }
 
+  quitarIngrediente(unIngrediente, numero) {
+    const newIngredients = this.state.ingredientesHamburguesa.slice();
+    newIngredients.splice(numero, 1)
+    this.setState({
+      ...this.state,
+      ingredientesHamburguesa: newIngredients
+    })
+  }
+
+  getCosto() {
+    return this.state.ingredientesHamburguesa.reduce((total, ingrediente) => total + ingrediente.precio, 0);
+  }
+
   render() {
     return (
       <div className="App">
@@ -31,6 +44,7 @@ class App extends Component {
         </section>
         <section>
           <h3>Verifique Su Hamburguesa</h3>
+          <span className="costo">Costo: <b>${this.getCosto()}</b></span>
           <ListaIngredientes ingredientes={this.state.ingredientesHamburguesa} buttonLabel="-" buttonAction={
             (unIngrediente, numero) => this.quitarIngrediente(unIngrediente, numero)}></ListaIngredientes>
         </section>

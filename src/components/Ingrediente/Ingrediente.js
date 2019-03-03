@@ -13,7 +13,10 @@ class Ingrediente extends React.Component {
 
         return <div className="ingrediente">
             <div className="nombre">{ingrediente.nombre}</div>{precioDiv}
-            {this.props.buttonLabel && <div className="add-button-container"><button onClick={() => this.props.buttonAction(ingrediente)}>{this.props.buttonLabel}</button></div>}
+            {this.props.buttonLabel && <div className="add-button-container"><button onClick={() => {
+                if(this.props.buttonAction) 
+                    this.props.buttonAction(ingrediente, this.props.index)
+                }}>{this.props.buttonLabel}</button></div>}
         </div>
     }
 }
